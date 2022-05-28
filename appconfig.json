@@ -1,0 +1,12 @@
+{
+    "apps": {
+        "aroundmeApp": {
+            "bundleIds": [
+                "com.aroundme.app"
+            ],
+            "featurSet": {
+                "explore": true
+            }
+        }
+    }
+}
