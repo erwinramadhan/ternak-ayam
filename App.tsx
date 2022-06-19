@@ -1,17 +1,21 @@
 import React from 'react';
-import GetContext from './src/context/Context';
+import {Provider} from 'react-redux';
 
+import GetContext from './src/context/Context';
+import store from './src/store/store';
 import AppNavigation from './src/navigation/AppNavigation';
 import {ThemeProvider} from './src/context/Theme';
 
 const App = () => {
   const Context = GetContext();
   return (
-    <Context.DataProvider>
-      <ThemeProvider>
-        <AppNavigation />
-      </ThemeProvider>
-    </Context.DataProvider>
+    <Provider store={store}>
+      <Context.DataProvider>
+        <ThemeProvider>
+          <AppNavigation />
+        </ThemeProvider>
+      </Context.DataProvider>
+    </Provider>
   );
 };
 

@@ -11,17 +11,18 @@ import {
 } from '@react-navigation/native';
 
 import GetContext from '../context/Context';
-import Screens from './Screens';
+import Tabs from './Screens';
+import {StyleSheet} from 'react-native';
 
 const Context = GetContext();
 
 const navigationRef = React.createRef<NavigationContainerRef<ParamListBase>>();
 
-const navigate = (name: any, params: any) => {
-  if (navigationRef.current?.isReady()) {
-    navigationRef.current?.navigate(name, params);
-  }
-};
+// const navigate = (name: any, params: any) => {
+//   if (navigationRef.current?.isReady()) {
+//     navigationRef.current?.navigate(name, params);
+//   }
+// };
 
 const AppNavigation = () => {
   const routeNameRef = useRef<string>();
@@ -43,15 +44,23 @@ const AppNavigation = () => {
   };
 
   return (
-    <SafeAreaProvider initialMetrics={initialWindowMetrics} style={{flex: 1}}>
+    <SafeAreaProvider
+      initialMetrics={initialWindowMetrics}
+      style={Style.safeAreaProvider}>
       <NavigationContainer
         ref={navigationRef}
         onReady={onReady}
         theme={navigationTheme}>
-        <Screens />
+        <Tabs />
       </NavigationContainer>
     </SafeAreaProvider>
   );
 };
 
 export default AppNavigation;
+
+const Style = StyleSheet.create({
+  safeAreaProvider: {
+    flex: 1,
+  },
+});
