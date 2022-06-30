@@ -7,4 +7,7 @@ export type IText = {
   fontFamily?: string;
   fontSize?: number;
   style?: StyleProp<TextStyle>;
+  marginTop?: number;
+  marginBottom?: number;
+  numberOfLines?: number;
 };

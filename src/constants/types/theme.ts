@@ -17,6 +17,11 @@ export interface ThemeColors {
   white: ColorValue;
   bitterSweet: ColorValue;
   raisinBlack: ColorValue;
+  ghostWhite: ColorValue;
+  metalicSilver: ColorValue;
+  lightSkyBlue: ColorValue;
+  pistachio: ColorValue;
+  cyan: ColorValue;
 }
 
 export interface ThemeFonts {

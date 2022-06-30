@@ -1,5 +1,5 @@
 import React from 'react';
-import {StatusBar, StyleSheet, View} from 'react-native';
+import {ScrollView, StatusBar, StyleSheet, View} from 'react-native';
 import {SafeAreaInsetsContext} from 'react-native-safe-area-context';
 import {useHeaderHeight} from '@react-navigation/elements';
 import {IContainer} from '../../constants/types/Container';
@@ -12,6 +12,7 @@ const Container = ({
   translucent,
   barBackgroundColor,
   backgroundColorContainer,
+  scrollView,
 }: IContainer) => {
   const headerHeight = useHeaderHeight();
   const styles = Style(backgroundColorContainer);
@@ -26,9 +27,21 @@ const Container = ({
             backgroundColor={barBackgroundColor}
           />
           <View style={{height: (insets?.top || 0) - headerHeight}} />
-          <View style={StyleSheet.flatten([containerStyle, styles.container])}>
-            {children}
-          </View>
+          {scrollView ? (
+            <ScrollView
+              showsHorizontalScrollIndicator={false}
+              showsVerticalScrollIndicator={false}>
+              <View
+                style={StyleSheet.flatten([containerStyle, styles.container])}>
+                {children}
+              </View>
+            </ScrollView>
+          ) : (
+            <View
+              style={StyleSheet.flatten([containerStyle, styles.container])}>
+              {children}
+            </View>
+          )}
         </>
       )}
     </SafeAreaInsetsContext.Consumer>

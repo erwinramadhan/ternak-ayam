@@ -1,7 +1,6 @@
-import { ITheme } from "../types/theme"
+import {ITheme} from '../types/theme';
 
 export interface IUseData {
-  theme: ITheme
-  setTheme: (theme?: ITheme) => void
+  theme: ITheme;
+  setTheme: (theme?: ITheme) => void;
 }
-

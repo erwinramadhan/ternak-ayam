@@ -9,4 +9,5 @@ export type IContainer = {
   translucent?: boolean;
   barBackgroundColor?: ColorValue;
   backgroundColorContainer?: ColorValue;
+  scrollView?: boolean;
 };
