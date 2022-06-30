@@ -76,7 +76,7 @@ const Login = () => {
       <Text style={style.dropdownTitleText} color={theme.colors.raisinBlack}>
         Jenis Kelamin
       </Text>
-      <DropDownPicker
+      {/* <DropDownPicker
         open={openDropdown}
         value={valueDropdown}
         items={itemsDropdown}
@@ -87,7 +87,7 @@ const Login = () => {
         style={style.dropdownStyle}
         placeholderStyle={style.dropdownPlaceholderStyle}
         dropDownContainerStyle={style.dropdownContainerStyle}
-      />
+      /> */}
       <Button
         onPress={onPressButton}
         text="MASUK"
